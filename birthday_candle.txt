@@ -1,0 +1,39 @@
+int BLED1 = 5;
+int KG=10; int TG=2; 
+int blow_candle =0;
+
+int Do=262, Re=294, Mi=330, Fa=349, So=392, La=440, Si= 494;
+int Buzzer=3; int dt=200;
+int song=0;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(BLED1,OUTPUT);
+  pinMode(Buzzer,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  if (song==0){tone(Buzzer,So,500);}
+  else{
+  noTone(Buzzer);
+  int sensorValue = analogRead(A0);  //讀取分貝感測器的值
+  Serial.print(blow_candle);Serial.print(" ");//在監控視窗顯示讀取的值
+  Serial.println(sensorValue);delay(100);
+  if (sensorValue<160){
+    if (blow_candle==0){
+      if(KG<1 || KG>=50){TG = -TG;}
+      else{analogWrite(BLED1,KG+9);}
+      KG = KG+TG;delay(100);}//用呼吸燈模擬蠟燭明滅的效果
+    else{analogWrite(BLED1,0);delay(200);}
+    }
+    
+  else{
+    blow_candle =blow_candle +1;
+    Serial.print(blow_candle);
+    analogWrite(BLED1,20);
+    analogWrite(BLED1,10);
+    if(KG>0){analogWrite(BLED1,KG);KG = KG-TG;delay(100);}  //LED燈慢慢變暗模擬蠟燭被吹滅
+   }  
+}
