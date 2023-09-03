@@ -1,0 +1,34 @@
+void soung() {
+  tone(Buzzer,La,500);delay(dt); 
+  tone(Buzzer,Si,500);delay(dt); 
+  tone(Buzzer,Do*2,500);delay(dt*3);
+  tone(Buzzer,Si,500);delay(dt); 
+  tone(Buzzer,Do*2,500);delay(dt*2); 
+  tone(Buzzer,Mi*2,500);delay(dt*2); 
+  tone(Buzzer,Si,500);delay(dt*4);
+  delay(dt*2);
+   
+  tone(Buzzer,Mi,500);delay(dt*2);
+  tone(Buzzer,La,500);delay(dt*3);
+  tone(Buzzer,So,500);delay(dt);
+  tone(Buzzer,La,500);delay(dt*2);
+  tone(Buzzer,Do*2,500);delay(dt*2);
+  tone(Buzzer,So,500);delay(dt*4);
+  delay(dt*2);
+
+  tone(Buzzer,Mi,500);delay(dt*2);
+  tone(Buzzer,Fa,500);delay(dt*3);
+  tone(Buzzer,Mi,500);delay(dt);
+  tone(Buzzer,Fa,500);delay(dt*2);
+  tone(Buzzer,Do*2,500);delay(dt*2);
+  tone(Buzzer,Mi,500);delay(dt*3);
+  tone(Buzzer,Re,500);delay(dt);
+  tone(Buzzer,Mi,500);delay(dt*2);
+  tone(Buzzer,Do*2,500);delay(dt*2);
+  tone(Buzzer,Si,500);delay(dt*3);
+  tone(Buzzer,370,500);delay(dt);
+  tone(Buzzer,Fa,500);delay(dt*2);
+  tone(Buzzer,Si,500);delay(dt*2);
+  tone(Buzzer,Si,500);delay(dt*4);
+  delay(dt*2);
+  }
